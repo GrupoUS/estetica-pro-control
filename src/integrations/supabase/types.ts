@@ -9,6 +9,158 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      appointments: {
+        Row: {
+          client_email: string | null
+          client_name: string
+          client_phone: string | null
+          clinic_id: string | null
+          created_at: string | null
+          end_time: string
+          id: string
+          notes: string | null
+          professional_id: string | null
+          service_id: string | null
+          start_time: string
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          client_email?: string | null
+          client_name: string
+          client_phone?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          end_time: string
+          id?: string
+          notes?: string | null
+          professional_id?: string | null
+          service_id?: string | null
+          start_time: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          client_email?: string | null
+          client_name?: string
+          client_phone?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          end_time?: string
+          id?: string
+          notes?: string | null
+          professional_id?: string | null
+          service_id?: string | null
+          start_time?: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "appointments_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "appointments_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      automations: {
+        Row: {
+          active: boolean | null
+          clinic_id: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          name: string
+          trigger_event: string
+          updated_at: string | null
+          workflow_id: string | null
+        }
+        Insert: {
+          active?: boolean | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name: string
+          trigger_event: string
+          updated_at?: string | null
+          workflow_id?: string | null
+        }
+        Update: {
+          active?: boolean | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name?: string
+          trigger_event?: string
+          updated_at?: string | null
+          workflow_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "automations_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      before_after_photos: {
+        Row: {
+          after_photo: string | null
+          before_photo: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          medical_record_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          after_photo?: string | null
+          before_photo?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          medical_record_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          after_photo?: string | null
+          before_photo?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          medical_record_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "before_after_photos_medical_record_id_fkey"
+            columns: ["medical_record_id"]
+            isOneToOne: false
+            referencedRelation: "medical_records"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       "Carrinho Abandonado": {
         Row: {
           Email: string | null
@@ -72,6 +224,48 @@ export type Database = {
           resumo?: string | null
           status?: string | null
           telefone?: string | null
+        }
+        Relationships: []
+      }
+      clinics: {
+        Row: {
+          address: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          logo: string | null
+          name: string
+          phone: string | null
+          stripe_customer_id: string | null
+          subscription_status: string | null
+          subscription_tier: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          logo?: string | null
+          name: string
+          phone?: string | null
+          stripe_customer_id?: string | null
+          subscription_status?: string | null
+          subscription_tier?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          logo?: string | null
+          name?: string
+          phone?: string | null
+          stripe_customer_id?: string | null
+          subscription_status?: string | null
+          subscription_tier?: string | null
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -180,6 +374,352 @@ export type Database = {
         }
         Relationships: []
       }
+      financial_transactions: {
+        Row: {
+          amount: number
+          appointment_id: string | null
+          category: string | null
+          clinic_id: string | null
+          created_at: string | null
+          description: string
+          id: string
+          payment_method: string | null
+          status: string | null
+          transaction_type: string
+          updated_at: string | null
+        }
+        Insert: {
+          amount: number
+          appointment_id?: string | null
+          category?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description: string
+          id?: string
+          payment_method?: string | null
+          status?: string | null
+          transaction_type: string
+          updated_at?: string | null
+        }
+        Update: {
+          amount?: number
+          appointment_id?: string | null
+          category?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string
+          id?: string
+          payment_method?: string | null
+          status?: string | null
+          transaction_type?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "financial_transactions_appointment_id_fkey"
+            columns: ["appointment_id"]
+            isOneToOne: false
+            referencedRelation: "appointments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "financial_transactions_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      inventory: {
+        Row: {
+          category: string | null
+          clinic_id: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          min_quantity: number | null
+          name: string
+          price: number | null
+          quantity: number
+          supplier: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          category?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          min_quantity?: number | null
+          name: string
+          price?: number | null
+          quantity?: number
+          supplier?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          category?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          min_quantity?: number | null
+          name?: string
+          price?: number | null
+          quantity?: number
+          supplier?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "inventory_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      marketing_campaigns: {
+        Row: {
+          campaign_type: string | null
+          clinic_id: string | null
+          created_at: string | null
+          description: string | null
+          end_date: string | null
+          id: string
+          name: string
+          start_date: string | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          campaign_type?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          name: string
+          start_date?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          campaign_type?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          name?: string
+          start_date?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "marketing_campaigns_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      medical_records: {
+        Row: {
+          appointment_id: string | null
+          clinic_id: string | null
+          created_at: string | null
+          id: string
+          notes: string | null
+          patient_id: string | null
+          professional_id: string | null
+          signed: boolean | null
+          treatment_plan: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          appointment_id?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          patient_id?: string | null
+          professional_id?: string | null
+          signed?: boolean | null
+          treatment_plan?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          appointment_id?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          patient_id?: string | null
+          professional_id?: string | null
+          signed?: boolean | null
+          treatment_plan?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "medical_records_appointment_id_fkey"
+            columns: ["appointment_id"]
+            isOneToOne: false
+            referencedRelation: "appointments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "medical_records_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "medical_records_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "medical_records_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patients: {
+        Row: {
+          address: string | null
+          birth_date: string | null
+          clinic_id: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          name: string
+          phone: string
+          updated_at: string | null
+        }
+        Insert: {
+          address?: string | null
+          birth_date?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name: string
+          phone: string
+          updated_at?: string | null
+        }
+        Update: {
+          address?: string | null
+          birth_date?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name?: string
+          phone?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patients_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      professionals: {
+        Row: {
+          bio: string | null
+          clinic_id: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          name: string
+          phone: string | null
+          photo: string | null
+          specialty: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          bio?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name: string
+          phone?: string | null
+          photo?: string | null
+          specialty?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          bio?: string | null
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name?: string
+          phone?: string | null
+          photo?: string | null
+          specialty?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "professionals_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          clinic_id: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          name: string | null
+          phone: string | null
+          role: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id: string
+          name?: string | null
+          phone?: string | null
+          role?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          clinic_id?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name?: string | null
+          phone?: string | null
+          role?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       "SDR - HISTORICO": {
         Row: {
           created_at: string
@@ -254,6 +794,47 @@ export type Database = {
           Telefone?: string | null
         }
         Relationships: []
+      }
+      services: {
+        Row: {
+          clinic_id: string | null
+          created_at: string | null
+          description: string | null
+          duration: number
+          id: string
+          name: string
+          price: number
+          updated_at: string | null
+        }
+        Insert: {
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          duration: number
+          id?: string
+          name: string
+          price: number
+          updated_at?: string | null
+        }
+        Update: {
+          clinic_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          duration?: number
+          id?: string
+          name?: string
+          price?: number
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "services_clinic_id_fkey"
+            columns: ["clinic_id"]
+            isOneToOne: false
+            referencedRelation: "clinics"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
