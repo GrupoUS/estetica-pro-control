@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 210 50% 98%;
-    --foreground: 222 47% 11%;
+    --background: 240 50% 99%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 195 95% 45%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 272 76% 53%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 210 40% 94%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 273 78% 93%;
+    --accent-foreground: 240 5.9% 10%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 47% 11%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 272 76% 53%;
 
     --radius: 0.75rem;
 
@@ -46,33 +46,33 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 195 95% 45%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 272 76% 53%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 217 33% 18%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 273 78% 18%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 213 27% 84%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 272 76% 60%;
     
     --sidebar-background: 240 6% 10%;
     --sidebar-foreground: 240 5% 96%;
@@ -93,4 +93,68 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+}
+
+/* Efeito neon para elementos destacados */
+.neon-glow {
+  box-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+              0 0 10px theme('colors.primary.DEFAULT'),
+              0 0 15px theme('colors.primary.DEFAULT');
+  transition: all 0.3s ease;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+               0 0 10px theme('colors.primary.DEFAULT');
+}
+
+/* Gradientes personalizados */
+.bg-neon-gradient {
+  background: linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%);
+}
+
+.bg-dark-gradient {
+  background: linear-gradient(135deg, #1A1F2C 0%, #2A2F3C 100%);
+}
+
+/* Animações */
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+/* Efeito de borda neon */
+.neon-border {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #9b87f5, #D946EF);
+  border-image-slice: 1;
+}
+
+/* Estilos para formulários elegantes */
+.form-elegant input,
+.form-elegant select,
+.form-elegant textarea {
+  @apply bg-background border-2 border-accent focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300;
+}
+
+/* Botões com efeito de hover sofisticado */
+.btn-neon {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-neon::after {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-neon:hover::after {
+  @apply opacity-10;
 }

@@ -89,6 +89,15 @@ export default {
 					900: '#34435d',
 					950: '#222c3d',
 				},
+        neon: {
+          purple: '#9b87f5',
+          pink: '#D946EF',
+          orange: '#F97316',
+          black: '#1A1F2C',
+          gray: '#8E9196',
+          light: '#E5DEFF',
+          softPink: '#FFDEE2'
+        }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -111,12 +120,26 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'pulse-neon': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-neon': 'pulse-neon 2s ease-in-out infinite'
+			},
+      boxShadow: {
+        'neon': '0 0 5px rgba(155, 135, 245, 0.7), 0 0 10px rgba(155, 135, 245, 0.5), 0 0 15px rgba(155, 135, 245, 0.3)',
+        'neon-hover': '0 0 8px rgba(155, 135, 245, 0.8), 0 0 15px rgba(155, 135, 245, 0.6), 0 0 20px rgba(155, 135, 245, 0.4)'
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-neon': 'linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #1A1F2C 0%, #2A2F3C 100%)'
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
