@@ -64,17 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
-					950: '#082f49',
+					50: '#fffaeb',
+					100: '#fff1c5',
+					200: '#ffe285',
+					300: '#ffcf46',
+					400: '#ffbe1a',
+					500: '#ffa500',
+					600: '#e68600',
+					700: '#cc6a00',
+					800: '#a45300',
+					900: '#7a3600',
+					950: '#4a2000',
 				},
 				aesthetic: {
 					50: '#f5f7fa',
@@ -90,13 +90,13 @@ export default {
 					950: '#222c3d',
 				},
 				neon: {
-					purple: '#8c00ff',
-					pink: '#ca00fd',
+					gold: '#FFD700',
+					amber: '#FFA500',
 					orange: '#F97316',
 					black: '#1A1F2C',
 					gray: '#8E9196',
-					light: '#E5DEFF',
-					softPink: '#FFDEE2'
+					light: '#FFF6D4',
+					softGold: '#FFEEBA'
 				}
 			},
 			borderRadius: {
@@ -132,12 +132,12 @@ export default {
 				'pulse-neon': 'pulse-neon 2s ease-in-out infinite'
 			},
 			boxShadow: {
-				'neon': '0 0 5px rgba(140, 0, 255, 0.7), 0 0 10px rgba(140, 0, 255, 0.5), 0 0 15px rgba(140, 0, 255, 0.3)',
-				'neon-hover': '0 0 8px rgba(140, 0, 255, 0.8), 0 0 15px rgba(140, 0, 255, 0.6), 0 0 20px rgba(140, 0, 255, 0.4)'
+				'neon': '0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3)',
+				'neon-hover': '0 0 8px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-neon': 'linear-gradient(135deg, #ca00fd 0%, #8c00ff 100%)',
+				'gradient-neon': 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
 				'gradient-dark': 'linear-gradient(135deg, #1A1F2C 0%, #2A2F3C 100%)'
 			}
 		}
