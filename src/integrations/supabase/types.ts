@@ -161,6 +161,75 @@ export type Database = {
           },
         ]
       }
+      blog_posts: {
+        Row: {
+          category: string | null
+          content: string | null
+          created_at: string
+          date: string | null
+          excerpt: string | null
+          id: string
+          imageurl: string | null
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          content?: string | null
+          created_at?: string
+          date?: string | null
+          excerpt?: string | null
+          id?: string
+          imageurl?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          content?: string | null
+          created_at?: string
+          date?: string | null
+          excerpt?: string | null
+          id?: string
+          imageurl?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_posts_duplicate: {
+        Row: {
+          category: string | null
+          content: string | null
+          date: string | null
+          excerpt: string | null
+          imageurl: string | null
+          slug: string
+          title: string
+        }
+        Insert: {
+          category?: string | null
+          content?: string | null
+          date?: string | null
+          excerpt?: string | null
+          imageurl?: string | null
+          slug: string
+          title: string
+        }
+        Update: {
+          category?: string | null
+          content?: string | null
+          date?: string | null
+          excerpt?: string | null
+          imageurl?: string | null
+          slug?: string
+          title?: string
+        }
+        Relationships: []
+      }
       "Carrinho Abandonado": {
         Row: {
           Email: string | null
@@ -193,37 +262,97 @@ export type Database = {
       }
       "Clientes-Kaza": {
         Row: {
-          atende_humano: boolean | null
+          Aniversário: string | null
+          "Ativação de Conta": string | null
+          CEP: string | null
+          Cidade: string | null
+          Complemento: string | null
+          Conta: string | null
+          "CPF Cônjuge": string | null
           created_at: string
-          dados: string | null
-          email: string | null
+          "Data Emissão Documento": string | null
+          "Data Próxima Revisão Cadastral": string | null
+          "Data Última Revisão Cadastral": string | null
+          Documento: string | null
+          "E-Mail Acesso": string | null
+          "E-Mail Comunicação": string | null
+          Endereço: string | null
+          "Estado Civil": string | null
+          Gênero: string | null
           id: number
-          nome: string | null
-          resumo: string | null
-          status: string | null
-          telefone: string | null
+          Idade: string | null
+          Nacionalidade: string | null
+          Nome: string | null
+          "Número Documento": string | null
+          "Pendência Cadastral": string | null
+          "Perfil de Acesso": string | null
+          "Perfil Suitability": string | null
+          "Profissão / Setor": string | null
+          Telefone: string | null
+          "Tipo Conta": string | null
+          "Vencimento Suitability": string | null
         }
         Insert: {
-          atende_humano?: boolean | null
+          Aniversário?: string | null
+          "Ativação de Conta"?: string | null
+          CEP?: string | null
+          Cidade?: string | null
+          Complemento?: string | null
+          Conta?: string | null
+          "CPF Cônjuge"?: string | null
           created_at?: string
-          dados?: string | null
-          email?: string | null
+          "Data Emissão Documento"?: string | null
+          "Data Próxima Revisão Cadastral"?: string | null
+          "Data Última Revisão Cadastral"?: string | null
+          Documento?: string | null
+          "E-Mail Acesso"?: string | null
+          "E-Mail Comunicação"?: string | null
+          Endereço?: string | null
+          "Estado Civil"?: string | null
+          Gênero?: string | null
           id?: number
-          nome?: string | null
-          resumo?: string | null
-          status?: string | null
-          telefone?: string | null
+          Idade?: string | null
+          Nacionalidade?: string | null
+          Nome?: string | null
+          "Número Documento"?: string | null
+          "Pendência Cadastral"?: string | null
+          "Perfil de Acesso"?: string | null
+          "Perfil Suitability"?: string | null
+          "Profissão / Setor"?: string | null
+          Telefone?: string | null
+          "Tipo Conta"?: string | null
+          "Vencimento Suitability"?: string | null
         }
         Update: {
-          atende_humano?: boolean | null
+          Aniversário?: string | null
+          "Ativação de Conta"?: string | null
+          CEP?: string | null
+          Cidade?: string | null
+          Complemento?: string | null
+          Conta?: string | null
+          "CPF Cônjuge"?: string | null
           created_at?: string
-          dados?: string | null
-          email?: string | null
+          "Data Emissão Documento"?: string | null
+          "Data Próxima Revisão Cadastral"?: string | null
+          "Data Última Revisão Cadastral"?: string | null
+          Documento?: string | null
+          "E-Mail Acesso"?: string | null
+          "E-Mail Comunicação"?: string | null
+          Endereço?: string | null
+          "Estado Civil"?: string | null
+          Gênero?: string | null
           id?: number
-          nome?: string | null
-          resumo?: string | null
-          status?: string | null
-          telefone?: string | null
+          Idade?: string | null
+          Nacionalidade?: string | null
+          Nome?: string | null
+          "Número Documento"?: string | null
+          "Pendência Cadastral"?: string | null
+          "Perfil de Acesso"?: string | null
+          "Perfil Suitability"?: string | null
+          "Profissão / Setor"?: string | null
+          Telefone?: string | null
+          "Tipo Conta"?: string | null
+          "Vencimento Suitability"?: string | null
         }
         Relationships: []
       }
@@ -480,6 +609,30 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      investment_leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          phone: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
       }
       marketing_campaigns: {
         Row: {
@@ -835,6 +988,30 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      website_leads: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          name: string
+          phone: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
       }
     }
     Views: {

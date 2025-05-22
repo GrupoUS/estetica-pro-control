@@ -64,17 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					50: '#fffaeb',
-					100: '#fff1c5',
-					200: '#ffe285',
-					300: '#ffcf46',
-					400: '#ffbe1a',
-					500: '#ffa500',
-					600: '#e68600',
-					700: '#cc6a00',
-					800: '#a45300',
-					900: '#7a3600',
-					950: '#4a2000',
+					50: '#FFF9E5',
+					100: '#FFF0C2',
+					200: '#FFE499',
+					300: '#FFD870',
+					400: '#F5D77B',
+					500: '#E6A419',
+					600: '#CB8A00',
+					700: '#B07300',
+					800: '#8A5C00',
+					900: '#644200',
+					950: '#3D2700',
 				},
 				aesthetic: {
 					50: '#f5f7fa',
@@ -90,13 +90,13 @@ export default {
 					950: '#222c3d',
 				},
 				neon: {
-					gold: '#FFD700',
-					amber: '#FFA500',
-					orange: '#F97316',
+					gold: '#F5D77B',
+					amber: '#E6A419',
+					orange: '#CB8A00',
 					black: '#1A1F2C',
 					gray: '#8E9196',
-					light: '#FFF6D4',
-					softGold: '#FFEEBA'
+					light: '#FFF9E5',
+					softGold: '#FFE499'
 				}
 			},
 			borderRadius: {
@@ -132,12 +132,12 @@ export default {
 				'pulse-neon': 'pulse-neon 2s ease-in-out infinite'
 			},
 			boxShadow: {
-				'neon': '0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3)',
-				'neon-hover': '0 0 8px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4)'
+				'neon': '0 0 5px rgba(245, 215, 123, 0.7), 0 0 10px rgba(245, 215, 123, 0.5), 0 0 15px rgba(245, 215, 123, 0.3)',
+				'neon-hover': '0 0 8px rgba(245, 215, 123, 0.8), 0 0 15px rgba(245, 215, 123, 0.6), 0 0 20px rgba(245, 215, 123, 0.4)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-neon': 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+				'gradient-neon': 'linear-gradient(135deg, #F5D77B 0%, #E6A419 100%)',
 				'gradient-dark': 'linear-gradient(135deg, #1A1F2C 0%, #2A2F3C 100%)'
 			}
 		}
